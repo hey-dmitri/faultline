@@ -50,10 +50,13 @@ Faultline follows the [Agent Skills](https://agentskills.io) open standard. A sk
 Clone into your personal skills folder to make it available across every project:
 
 ```bash
+mkdir -p ~/.claude/skills
 git clone https://github.com/hey-dmitri/faultline.git ~/.claude/skills/faultline
 ```
 
 Or drop it into a single project at `.claude/skills/faultline/`. Start Claude Code and type `/faultline`, or just describe what you want pressure-tested and Claude will load it when relevant. Reference: https://code.claude.com/docs/en/skills
+
+If you created the top-level skills directory while Claude Code was already running, restart Claude Code once so it can discover the new directory.
 
 **claude.ai**
 
@@ -90,6 +93,8 @@ You take that question wherever it does the most damage: a customer call, a team
 ## A note on trust
 
 This is a prompt-only skill. It bundles no scripts and makes no network calls. Read `SKILL.md` before you install it, the way you should with any skill you download from someone you don't know. Auditing skills from outside sources is standard practice, and this one is short enough to read in a few minutes.
+
+The downloadable `faultline.skill` archive is built from the visible `SKILL.md`. Run `./build.sh` to rebuild it and `./scripts/verify-package.sh` to confirm that the committed archive matches the source.
 
 ## License
 
