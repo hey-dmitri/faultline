@@ -103,8 +103,17 @@ user's own material, as specifically as the context allows. This is not an inven
 
 - Useless: "I have four strategy docs and a model."
 - Confirmable: "Your strategy rests on capturing RevOps buyers before they standardize on an
-  incumbent. Your model assumes an eighteen-month payback. Your deck claims a wedge it does not
-  define."
+  incumbent (believed). Your model assumes an eighteen-month payback (known). Your deck claims a
+  wedge it does not define (unknown)."
+
+Tag each claim by how the material holds it:
+
+- **Known.** Backed by evidence in the material: data, results, a signed commitment.
+- **Believed.** Asserted, but nothing in the material supports it.
+- **Unknown.** The work depends on it, but the material never settles it.
+
+Believed and unknown claims are the primary targets in Step 5. Close the summary with your door
+call in one line (Step 4b), so the user can correct it along with the claims.
 
 Then ask once, combined: **is this right, and is there anything to add?**
 
@@ -112,6 +121,20 @@ If the user adds material, re-summarize the augmented context **once**. On any f
 additions after that, acknowledge them and proceed without re-summarizing, unless the user
 explicitly asks for a fresh summary. Re-summarizing every loop spirals; one re-summary catches
 the common case.
+
+### Step 4b — Door check
+
+Classify the work by how hard it is to reverse. The call sets how hard Faultline pushes.
+
+- **One-way door.** Hard or costly to undo: a price change to the installed base, a senior hire,
+  a market entry, a multi-year commitment. Run the full library within the normal ceiling.
+- **Two-way door.** Cheap to reverse: a test, a pilot, a messaging change, an internal process.
+  Cap the list at three or four questions, weighted toward Tradeoff and the reversal trigger in
+  Inversion / pre-mortem. Heavy scrutiny on a reversible call is its own failure: it slows a
+  decision that should be made fast and revisited.
+
+If the work mixes both, probe the one-way parts at full depth and the rest lightly. Do not ask
+the user to classify. State the call at the end of the Step 4 summary and let them correct it.
 
 ### Step 5 — Diagnose (internal, never shown)
 
@@ -123,6 +146,9 @@ Scan the confirmed context for the targets that questions will aim at:
 - Conspicuous omissions: what a sophisticated operator would expect to see here and does not
 - Fragile consensus: the comfortable belief everyone is accidentally defending
 - Untested dependencies, including dependence on a rejected alternative being wrong
+- Unnamed tradeoffs: what this displaces, and whether that choice was made or just assumed
+- Missing execution path: no single owner, no capacity, an upstream decision not yet made, a
+  dependency that lands late
 
 **This pass is hidden.** Do not narrate it, do not surface it, do not label questions with the
 diagnosis. It exists only to determine which moves are warranted and what each question
@@ -133,7 +159,7 @@ targets. The output is cleaner without it.
 For each diagnosed weak point, select the move or moves that fit and write the question. Fill
 the move's variable slots with the specific subject from the context, never with placeholders.
 A move runs only when the context gives it something real to bite on. Do not run a move because
-it is in the library. Most runs will not use all eight moves, and that is correct.
+it is in the library. Most runs will not use all ten moves, and that is correct.
 
 Every generated question must pass the engine test. If it does not, cut it or rewrite it.
 
@@ -149,7 +175,7 @@ Every generated question must pass the engine test. If it does not, cut it or re
 
 ## The move library
 
-Eight moves. Each is a structure for converting a diagnosed weak point into a question that
+Ten moves. Each is a structure for converting a diagnosed weak point into a question that
 passes the engine test. Apply only the ones the context warrants.
 
 | Move | What it targets | Shape |
@@ -161,7 +187,9 @@ passes the engine test. Apply only the ones the context warrants.
 | **Consensus made visible** | The comfortable belief the team is accidentally defending, stated plainly so its weakness shows. Include only when probing it is warranted, meaningful, and actionable | "State the version of [X] that everyone here assumes is true. Now: what is the case that it is wrong?" |
 | **Omission probe** | The white space. What a sophisticated operator would expect to see and conspicuously does not | "What would a [seasoned operator] expect to find in this [plan / model / deck] that is missing, and what does its absence imply?" |
 | **Second-order consequence** | The downstream cost of the thing being true, as opposed to whether it is true | "Assume this works exactly as intended. What does it break, strain, or foreclose downstream?" |
-| **Inversion / pre-mortem** | Failure of the whole effort, narrated backward from the autopsy | "It is [timeframe] later and this failed completely. Using only failure modes realistic for this context, narrate what killed it." |
+| **Tradeoff** | The opportunity cost nobody named: what this displaces in people, time, money, or focus | "If [this] moves up, what moves down? Who loses capacity to make room, and was that choice made or just assumed?" |
+| **Execution path** | Whether the plan can actually be carried out: a single owner, real capacity, upstream decisions settled, dependencies on time | "Who owns [X] end to end, what capacity does it take from, and which upstream decision or dependency is not settled yet?" |
+| **Inversion / pre-mortem** | Failure of the whole effort, narrated backward from the autopsy, and the signal that should trigger a reversal before it gets there | "It is [timeframe] later and this failed completely. Using only failure modes realistic for this context, narrate what killed it. Then: what result by [date] would tell you to reverse course?" |
 
 Reference-class questions (what the companies that failed at exactly this share, and which of
 those traits the user shares) are deliberately not in the library. If a run feels like it is
@@ -196,6 +224,17 @@ Second question:
 > **[Adversarial expert + evidence leash]** You are a RevOps lead who signed up, used the
 > product, and never converted. Using only objections realistic for this segment, walk through
 > the exact moment you decided it was not worth paying for.
+
+**Example C. Function: operations plan. Context: a Q1 plan to roll out a new customer
+onboarding process across Sales and Customer Success.**
+
+Diagnosed weak point (hidden): the plan assigns the rollout to "Sales and CS" jointly, and
+assumes CS absorbs the training hours during its heaviest renewal quarter.
+
+Output question, ranked first:
+> **[Execution path]** The rollout belongs to "Sales and CS," which means nobody owns it. Who is
+> the one name accountable for the January cutover, and which renewal work does CS stop doing to
+> free the training hours this plan assumes?
 
 ## Anti-patterns
 
