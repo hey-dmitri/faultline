@@ -21,7 +21,7 @@ A question that fails any of these doesn't ship.
 
 ## The moves
 
-Faultline works from a library of eight question structures and applies only the ones the material warrants. Most runs use a handful, not all eight.
+Faultline works from a library of ten question structures and applies only the ones the material warrants. Most runs use a handful, not all ten.
 
 - **The unsaid.** What every winner in the space understands and never says out loud.
 - **Load-bearing assumption + falsification.** The beliefs the work rests on, and what would prove each one false.
@@ -30,12 +30,15 @@ Faultline works from a library of eight question structures and applies only the
 - **Consensus made visible.** The comfortable belief everyone's quietly defending, stated plainly so its weakness shows.
 - **Omission probe.** What a seasoned operator would expect to see here and conspicuously doesn't.
 - **Second-order consequence.** What strains or breaks downstream if this works exactly as intended.
-- **Inversion / pre-mortem.** It's a year later and the work failed completely. What killed it.
+- **Tradeoff.** If this moves up, what moves down, and was that choice made or just assumed.
+- **Execution path.** Who owns it end to end, what capacity it takes, and which upstream decision isn't settled yet.
+- **Inversion / pre-mortem.** It's a year later and the work failed completely. What killed it, and what early result should have told you to reverse course.
 
 ## How it works
 
 1. You name the function and point Faultline at the material: files, a folder, uploads, docs it can reach, or context you've stated in the conversation.
 2. It summarizes the load-bearing claims it found and asks you to confirm them or add more. If you haven't given it enough to work on, it tells you what's missing instead of guessing.
+   It also calls the door: a one-way door (hard to reverse) gets the full treatment, a two-way door (cheap to reverse) gets three or four questions, because over-processing a reversible call is its own failure.
 3. It generates a ranked list of questions, sharpest first, each labeled with the move behind it.
 4. It stops. You decide what to ask, whom to ask, and how to answer.
 
